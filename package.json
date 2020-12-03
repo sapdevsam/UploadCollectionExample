@@ -1,0 +1,20 @@
+{
+  "name": "UploadCollectionExample",
+  "version": "1.0.0",
+  "description": "From SDK",
+  "private": true,
+  "devDependencies": {
+    "@sap/ui5-builder-webide-extension": "1.0.9",
+    "@ui5/cli": "1.7.0",
+    "ui5-middleware-simpleproxy": "^0.6.0"
+  },
+  "scripts": {
+    "build": "ui5 build --include-task=generateManifestBundle generateCachebusterInfo"
+  },
+  "ui5": {
+    "dependencies": [
+      "@sap/ui5-builder-webide-extension",
+      "ui5-middleware-simpleproxy"
+    ]
+  }
+}
