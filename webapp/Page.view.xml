@@ -13,37 +13,28 @@
 				<Label
 					text="Layout:">
 				</Label>
-				<Select
-					id="tbSelect"
-					items="{/items}"
-					selectedKey="{/selectedKey}"
-					change="onSelectChange" >
-					<core:Item key="{key}" text="{text}"/>
-				</Select>
 			</Toolbar>
 			<UploadCollection
 				id="UploadCollection"
 				maximumFilenameLength="55"
 				multiple="true"
-				items="{/items}"
+				items="{/Files}"
 				showSeparators="None"
 				change="onChange"
 				fileDeleted="onFileDeleted"
 				fileRenamed="onFileRenamed"
 				fileSizeExceed="onFileSizeExceed"
 				typeMissmatch="onTypeMissmatch"
-				uploadComplete="onUploadComplete">
+				uploadComplete="onUploadComplete"
+				uploadUrl="/sap/opu/odata/sap/ztest_mr_1_srv/Files">
 				<UploadCollectionItem
-					contributor="{contributor}"
-					documentId="{documentId}"
-					fileName="{fileName}"
-					fileSize="{fileSize}"
-					mimeType="{mimeType}"
-					thumbnailUrl="{thumbnailUrl}"
-					uploadedDate="{uploadedDate}"
-					url="{url}"
-					enableEdit="{enableEdit}"
-					enableDelete="{enableDelete}" />
+					documentId="{Name}"
+					fileName="{Name}"
+					mimeType="{MimeType}"
+					thumbnailUrl="/sap/opu/odata/sap/ztest_mr_1_srv/Files('{Name}')/$value"
+					url="/sap/opu/odata/sap/ztest_mr_1_srv/Files('{Name}')/$value"
+					enableEdit="false"
+					visibleEdit="false" />
 			</UploadCollection>
 		</content>
 	</Page>

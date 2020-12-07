@@ -21,11 +21,11 @@ builder:
       configuration:
         destDir: dist
         appFolder: webapp
-        nameSpace: moesk/pm/DefectLog
+        nameSpace: sap/m/sample/UploadCollection
     - name: webide-extension-task-resources
       afterTask: webide-extension-task-lint
       configuration:
-        nameSpace: moesk/pm/DefectLog
+        nameSpace: sap/m/sample/UploadCollection
 server:
   customMiddleware:
   - name: ui5-middleware-simpleproxy
@@ -33,3 +33,8 @@ server:
     afterMiddleware: compression
     configuration:
       baseUri: http://kbpre.corp.app-sol.ru:8000/sap/public/bc/ui5_ui5/resources/
+  - name: ui5-middleware-simpleproxy
+    mountPath: /sap/opu/odata/sap/ztest_mr_1_srv/
+    afterMiddleware: compression
+    configuration:
+      baseUri: http://kbpre.corp.app-sol.ru:8000/sap/opu/odata/sap/ztest_mr_1_srv
