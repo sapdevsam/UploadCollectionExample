@@ -1,0 +1,1 @@
+This project is an adoptation of example for UploadCollection control. This example is placed in SDK. The example is based on JSON model (local). I adopted it for using real OData service.
